@@ -150,7 +150,7 @@ func UpdateMetadataAccount(param UpdateMetadataAccountParam) types.Instruction {
 		NewUpdateAuthority  *common.PublicKey
 		PrimarySaleHappened *bool
 	}{
-		Instruction:         InstructionUpdateMetadataAccount,
+		Instruction:         InstructionUpdateMetadataAccountV2,
 		Data:                param.Data,
 		NewUpdateAuthority:  param.NewUpdateAuthority,
 		PrimarySaleHappened: param.PrimarySaleHappened,
