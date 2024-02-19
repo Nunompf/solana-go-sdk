@@ -138,7 +138,7 @@ func CreateMetadataAccount(param CreateMetadataAccountParam) types.Instruction {
 type UpdateMetadataAccountParam struct {
 	MetadataAccount     common.PublicKey
 	UpdateAuthority     common.PublicKey
-	Data                *Data
+	Data                *DataV2
 	NewUpdateAuthority  *common.PublicKey
 	PrimarySaleHappened *bool
 }
@@ -146,7 +146,7 @@ type UpdateMetadataAccountParam struct {
 func UpdateMetadataAccount(param UpdateMetadataAccountParam) types.Instruction {
 	data, err := borsh.Serialize(struct {
 		Instruction         Instruction
-		Data                *Data
+		Data                *DataV2
 		NewUpdateAuthority  *common.PublicKey
 		PrimarySaleHappened *bool
 	}{
